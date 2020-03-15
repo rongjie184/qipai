@@ -1,0 +1,235 @@
+
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+  <meta name="format-detection" content="telephone=no" /> 
+  <meta name="msapplication-tap-highlight" content="no" /> 
+  <title>{$open.nickname}的邀请函</title> 
+  <link rel="stylesheet" href="__TMPL__Public/css/public.css" /> 
+  <link rel="stylesheet" href="__TMPL__Public/css/alert.css" /> 
+  <link rel="stylesheet" href="__TMPL__Public/css/swiper-3.4.2.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/bull_vue-1.0.0.css" /> 
+  <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/bullalert.css" /> 
+  <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/bullshop.css" /> 
+  <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/common/alert.css" /> 
+  <link rel="stylesheet" type="text/css" href="__TMPL__Public/css/activity.css">
+  <script src="__TMPL__Public/js/homepage/jq.js" type="text/javascript"></script>  
+  <script src="__TMPL__Public/js/homepage/home.js" type="text/javascript"></script>  
+  <script src="__TMPL__Public/js/swiper-3.4.2.min.js" type="text/javascript"></script>
+     <script type="text/javascript" src="/app/js/base64.js"></script>
+  <script src="/app/js/app.js" type="text/javascript"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript"></script>
+<script src="/app/js/clipboard.min.js"type="text/javascript"></script>
+<script>
+  var url = window.location.href;//用户要分享的网址
+  var title  = '{$open.nickname}的邀请函'//分享的标题
+  var shareimg = 'http://'+window.location.hostname+'/app/invitation.png';//分享的图片
+  var desc = '{$open.nickname}邀请你加入群组';//分享的描述信息
+  WeChat(url,title,shareimg,desc);
+</script>
+
+ </head> 
+ <body style="background-color: #0e0226"> 
+  
+  <div  class="main" style="background: rgb(14, 2, 38);">
+ 
+ <div id="fasongfk" background: rgb(14, 2, 38);height: 100%;position: fixed; width: 100%;">
+
+<div class="main" style="">
+  
+  <img src="http://goss.fexteam.com/files/images/activity/union_bg.jpg" style="top: 0;left: 0;width: 100%;height: 100%;position: relative;">
+  
+
+        
+       <div style="position: absolute;top: 10vh;left: 50%;margin-left: -25vh;height: 80vh;width: 50vh;" ng-if="showType==1" class="ng-scope">
+            <img src="http://goss.fexteam.com/files/images/activity/union_card.jpg" style="position: absolute;top: 0;left: 1vh;width: 48vh;height: 100%;">
+            <img src="http://goss.fexteam.com/files/images/activity/union_card_bottom.png" style="position: absolute;bottom: 0;width: 50vh;height: 35.25vh;">
+            <div class="imgOpen " onclick="xuanzhuan({$open.id})" style="position: absolute;bottom: 10vh;left: 50%;margin-left: -10vh;width: 20vh;height: 20vh;backface-visibility:hidden;">
+                <img  style="position: absolute;width: 20vh;height: 20vh;transform: rotate(deg);" src="http://goss.fexteam.com/files/images/activity/union_join.png">
+            </div>
+
+            <img style="position: absolute;top: 12vh;left: 50%;margin-left: -6vh;width: 12vh;height: 12vh;border-radius: 6vh;" src="{$open.img}">
+            <div style="position: absolute;top: 25vh;width: 100%;height: 5vh;line-height: 5vh;text-align: center;color: orange;font-size: 2.5vh" class="ng-binding">
+                　　　　　　
+            </div>
+            <div style="position: absolute;top: 32vh;width: 100%;height: 5vh;line-height: 5vh;text-align: center;color: orange;font-size: 3vh;">
+                {$open.nickname}邀请你玩游戏
+            </div>
+        </div>
+
+
+    
+
+</div>
+
+
+ </div>
+<div id="fasongfking"></div>
+<script type="text/javascript">
+    window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
+    var context = new (window.AudioContext || window.webkitAudioContext)();
+    var source = [];
+    var audioBuffer = [];
+    var gainNodebg = null;
+    var gainNode = null;
+    function initSound(arrayBuffer,id) {
+        context.decodeAudioData(arrayBuffer, function(buffer) { 
+            audioBuffer[id] = buffer;
+            if(bgmp3open==1 && id == 'background') {
+                mp3play('background');
+            }
+        }, function(e) { 
+            console.log('Error decoding file '+id, e);
+        });
+    }
+
+
+    function loadAudioFile(id) {
+        var url=$('#'+id).attr('src');
+        var xhr = new XMLHttpRequest(); 
+        xhr.open('GET', url, true);
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function(e) { 
+            window.soundCount --;
+            initSound(this.response,id);
+        };
+    }
+
+
+    window.soundCount = 0;
+    function audioAutoPlay(id){
+        window.soundCount ++;
+        loadAudioFile(id);
+    }
+
+    function muiscready(){
+        for(var i = 1; i < 33; i ++) {
+            audioAutoPlay('mp3niu'+i);
+        }
+        if(bgmp3open==1){
+            setTimeout(function(){
+            },2000)
+        }
+        if(bgmp3open==2){
+            mp3pause('background');
+        }
+    }
+    $(function () {
+        muiscready();
+    });
+
+    $(function () {
+        $("#showrule .createRoomBack").click(function (e) {
+            $("#showrule").css("display", "none");
+        });
+    });
+    function showrule() {
+        var $obj = $("#showrule").css("display", "block");
+    }
+</script>
+   <style>   
+#room_str{position:fixed;top:-300px;}
+.copyUrl{position: fixed;top: 10px;right: 15px;width: 80px;height: 29px;z-index: 99999;border: none;background: url(/app/fuzhi.png);background-size: 100%;}
+#copyUrl{ position:fixed;top:-300px;}
+   .attention {
+    position: fixed;
+    z-index: 9997;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -75px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.attention .attentionBackgroundB {
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    background: #000;
+    height: 100%;
+    width: 100%;
+}
+.attention img {
+    position: absolute;
+    top: 10px;
+    left: 29px;
+}
+.attention .attentionTextB {
+    position: absolute;
+    top: 100px;
+    width: 150px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    filter: alpha(opacity=95);
+    -moz-opacity: 0.95;
+    opacity: 0.95;
+} 
+</style>    
+<textarea id="room_str" value="">{$open.nickname}的邀请函
+http://{$_SERVER['HTTP_HOST']}/portal/home/gerenzxyaoqinghan/id/366666{$id}
+ </textarea>
+<textarea id="copyUrl" value=""></textarea>
+    
+<div class="attention"style="display: none;">
+<div class="attentionBackgroundB"></div> 
+<img src="http://goss.fexteam.com/files/images/center/alert1.png"> 
+<div class="attentionTextB">复制成功</div>
+</div>
+<div class="copyUrl" data-clipboard-action="copy" data-clipboard-target="#copyUrl">  
+</div>
+<script>
+    function onBridgeReady(){
+        WeixinJSBridge.invoke('getNetworkType',{},
+            function(e){
+                //WeixinJSBridge.log(e.err_msg);
+                mp3play('1miao');
+            });
+    }
+
+    if (typeof WeixinJSBridge == "undefined"){
+        if( document.addEventListener ){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if (document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    }else{
+        onBridgeReady();
+    }
+
+  muiscready();
+  
+  $.fn.BindClipboard = $.fn.BindClipboard || function(toolTip, target) {
+		var options = {};
+		if(target) {
+			options = {
+				"target": function(trigger) {
+					console.log(trigger);
+					return $(target)[0];
+				}
+			};
+		}
+		new ClipboardJS($(this)[0], options).on("success", function(e) {
+			$(toolTip).fadeIn().fadeOut();
+			console.log(e);
+		}).on("error", function(e) {
+			$(toolTip).hide();
+			console.log(e);
+		});
+	}
+
+	$(".copyUrl").BindClipboard(".attention", "#room_str");
+
+</script>                         
+<script>
+    function xuanzhuan(id){
+    $('.imgOpen').addClass('transf');
+    window.setTimeout("location.href = '/index.php/portal/home/gerenzxjiaruchengg/id/"+id+"'",'1000');
+  }
+</script>
+ </body>
+</html>

@@ -1,0 +1,30 @@
+<admintpl file="header" />
+<style>
+.home_info li em {
+	float: left;
+	width: 120px;
+	font-style: normal;
+}
+li {
+	list-style: none;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+
+		<h4 class="well"><a href="<php>echo base64_decode('aHR0cDovL3d3dy5jeG5kLmNvbS8=');</php>" target="_blank"><php>echo base64_decode('5pu05aSa57K+5ZOB5rqQ56CB6K+35LiK5rqQ56CB56S+5Yy6KHd3dy5jeG5kLmNvbSk=');</php></a></h4>
+		<div class="home_info">
+			<ul>
+				<volist name="server_info" id="vo">
+					<li><em>{$key}</em> <span>{$vo}</span></li>
+				</volist>
+			</ul>
+		</div>
+
+
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+
+</body>
+</html>

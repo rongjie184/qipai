@@ -1,0 +1,15 @@
+php  ./php54n/test.php start -d 1 44001 QQ8790766
+php  ./php54n/game2.php start -d 2 44002 9人牛牛1
+php  ./php54n/game1.php start -d 5 44003 6人斗牛1
+php  ./php54n/game5.php start -d 6 44004 炸金花
+php  ./php54n/game10.php start -d 8 44005 12
+php  ./php54n/game3.php start -d 9 44006 三公
+php  ./php54n/game14.php start -d 10 44007 9人牛牛8倍
+php  ./php54n/game4.php start -d 11 44008 九人三公
+php  ./php54n/game15.php start -d 13 44009 10人斗牛
+php  ./php54n/game6.php start -d 14 44010 二八杠
+php  ./php54n/game16.php start -d 17 44011 九人炸金花
+php  ./php54n/game17.php start -d 18 44012 	12人吉祥三公
+php  ./php54n/game26.php start -d 22 44013 五兽12人鱼虾蟹
+php  ./php54n/game27.php start -d 23 44014 五兽9人牌九
+php  ./php54n/game34.php start -d 24 44015 21点

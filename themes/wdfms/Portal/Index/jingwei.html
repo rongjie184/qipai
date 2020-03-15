@@ -1,0 +1,119 @@
+
+<html >
+<head>
+ <meta charset="utf-8" >
+ <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+ <meta name="format-detection" content="telephone=no" />
+ <meta name="msapplication-tap-highlight" content="no" />
+ <title>{$titlexx}精卫大厅</title>
+      <link rel="stylesheet" href="/app/css/appp.css" /> 
+ <link rel="stylesheet" href="/skin/nvwa/css/loading.css">
+ <link rel="stylesheet" type="text/css" href="/skin/nvwa/css/common-2.0.1.css">
+<link rel="stylesheet" type="text/css" href="/skin/nvwa/css/1.css" />
+<link rel="stylesheet" type="text/css" href="/skin/jingwei/2.css" />
+<link rel="stylesheet" type="text/css" href="/skin/jingwei/3.css" />
+<link rel="stylesheet" type="text/css" href="/skin/nvwa/css/4.css" />
+<script src="/skin/nvwa/css/21.js" type="text/javascript"></script>
+ <script type="text/javascript">
+
+     window.addEventListener('load', function() {
+         FastClick.attach(document.body);
+     }, false);
+
+     var newNum = "";
+     var per = window.innerWidth / 530;
+     var globalData = {
+         "card":"<?php echo $user['fk']; ?>",
+         "baseUrl":"http://xww.51drclub.com/",
+         "openId":"",
+         "dealerNum": "31",
+         "fileUrl": "https://gameoss.fexteam.com/",
+         "imageUrl": "http://goss.fexteam.com/",
+         "session":'MjViNzQ1NGM0ZGJlOWVjMjI0YWI4ZDgyZmZmNDZjNGE=',
+         "isAlertMsg":'0',
+         "alertMsg":'',
+         "isNotyMsg":'1',
+         "notyTime":'60',
+         "notySpeed":5000,
+         "sangongAlert":false,
+         "sangongAlertText":"游戏部署中，敬请期待。",
+         "shortType":'3',
+         "isShowNewgame":true,
+         "encodeType":3,
+         "freeGames":'{"1":0,"2":0,"5":0,"6":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0}',
+         "rpUrl":"http://zsapi.fexteam.com",
+         "isNewNoty":"0",
+         "hpUrl":"http://xww.51drclub.com/d/relist/31",
+     };
+     var userData = {
+         "accountId":"<?php echo $user['id']; ?>",
+         "nickname":"<?php echo $user['nickname']; ?>",
+         "avatar":"<?php echo $user['img']; ?>",
+         "isAuthPhone":"0",
+         "authCardCount":"100",
+         "phone":"<?php echo $user['phone']; ?>",
+     };
+
+     var socketData = {
+         "flower": "ws://wsxg1.fexteam.com:23102",
+         "landlord": "ws://wsxg2.fexteam.com:23112",
+         "bull": "ws://wsxg3.fexteam.com:23122",
+         "majiang": "ws://wsxg6.fexteam.com:23152",
+         "bull9": "ws://wsxg12.fexteam.com:13132",
+         "bullfight": "ws://wsxg5.fexteam.com:23142",
+         "scroll":"ws://wsxg7.fexteam.com:23162",
+         "sangong":"ws://wsxg8.fexteam.com:23172",
+         "sangong9":"ws://wsxg9.fexteam.com:23182",
+         "bull12":"ws://wsxg13.fexteam.com:13192",
+         "bull9_8":"ws://wsxg11.fexteam.com:23202",
+         "flower9":"ws://wsxg12.fexteam.com:23212",
+         "jixiang":"ws://wsxg15.fexteam.com:23222",
+         "fish":"ws://wsxg16.fexteam.com:23232",
+         "paijiu":"ws://wsxg17.fexteam.com:23242",
+         "blackjack":"ws://wsc1.fexteam.com:25002",
+         "bullNew":"ws://wsc2.fexteam.com:25012",
+     };
+
+     globalData.roomUrls=eval('(' + globalData.roomUrls + ')');
+     globalData.freeGames=eval('(' + globalData.freeGames + ')');
+
+     var isShowBull6 = 0;
+     var isShowBull9 = 0;
+     var isShowBull12 = 0;
+     var freeText = '春节活动，开房免费！神兽给大家拜年啦！';
+
+ </script>
+
+</head>
+<body>
+<div id="loading">
+ <img src="http://goss.fexteam.com/files/d_30/images/loading.gif"  />
+</div>
+<script src="/app/js/homepage/jq.js" type="text/javascript"></script>
+<script src="/diaoyong/98phone.js" type="text/javascript"></script>
+<script src="/skin/nvwa/css/22.js" type="text/javascript"></script>
+<script src="/skin/nvwa/css/23.js" type="text/javascript"></script>
+<script src="/skin/nvwa/css/24.js" type="text/javascript"></script>
+<script src="/skin/nvwa/css/25.js" type="text/javascript"></script>
+  <script src="/index.php/portal/index/gamejs" type="text/javascript"></script>
+<script>
+    load('show');
+    token='{$token}';
+    if(dkxx){
+        connect(dkxx);
+    }
+    else{
+        load('hide');
+        prompt('服务器没开启,请稍后再试');
+        setTimeout("$('body').hide()",3000);
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
